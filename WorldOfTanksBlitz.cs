@@ -12,10 +12,16 @@ namespace WorldOfTanksBlitz
 
         public WorldOfTanksBlitz(string applicationId)
         {
+            /*
+             * 0 - Region
+             * 1 - Section
+             * 2 - Type
+             * 3 - Parameters
+             */
             _requestForm =
-                @"https://api.wotblitz.{Region}/wotb/{Section}/{Type}/?application_id="
+                @"https://api.wotblitz.{0}/wotb/{1}/{2}/?application_id="
                 + applicationId
-                + "{Parameters}";
+                + "{3}";
         }
 
         public ServiceProvider Services { get; private set; } = null!;
@@ -25,7 +31,7 @@ namespace WorldOfTanksBlitz
             if (services == Service.None)
                 return Services;
 
-            IServiceCollection svc = new ServiceCollection(); //.AddSingleton(this);
+            IServiceCollection svc = new ServiceCollection();
 
             if (services.HasService(Service.Accounts))
                 svc = svc.AddSingleton(new Accounts(this));
@@ -45,7 +51,6 @@ namespace WorldOfTanksBlitz
         internal async Task<T> GetRequest<T>(RequestArguments requestArguments)
         {
             return await WargamingApi.WargamingApi.GetRequest<T>(
-                //new Uri(Smart.Format(_requestForm, requestArguments))
                 new Uri(
                     string.Format(
                         _requestForm,
