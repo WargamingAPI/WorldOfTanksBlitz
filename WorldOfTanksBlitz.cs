@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
-using SmartFormat;
 using WorldOfTanksBlitz.Services;
 using WorldOfTanksBlitz.Types;
 
@@ -46,7 +45,16 @@ namespace WorldOfTanksBlitz
         internal async Task<T> GetRequest<T>(RequestArguments requestArguments)
         {
             return await WargamingApi.WargamingApi.GetRequest<T>(
-                new Uri(Smart.Format(_requestForm, requestArguments))
+                //new Uri(Smart.Format(_requestForm, requestArguments))
+                new Uri(
+                    string.Format(
+                        _requestForm,
+                        nameof(requestArguments.Region),
+                        nameof(requestArguments.Section),
+                        nameof(requestArguments.Type),
+                        requestArguments.Parameters
+                    )
+                )
             );
         }
     }

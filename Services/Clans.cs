@@ -7,6 +7,8 @@ using WorldOfTanksBlitz.Types;
 using WorldOfTanksBlitz.Types.Clans;
 using RequestArguments = WorldOfTanksBlitz.Types.RequestArguments;
 using RequestParameters = WorldOfTanksBlitz.Types.RequestParameters;
+using TypesClans = System.Collections.Generic.Dictionary<long, WorldOfTanksBlitz.Types.Clans.ClanInfo?>;
+using Members = System.Collections.Generic.Dictionary<long, WorldOfTanksBlitz.Types.Clans.MemberInfo?>;
 
 namespace WorldOfTanksBlitz.Services
 {
@@ -44,14 +46,14 @@ namespace WorldOfTanksBlitz.Services
                 });
         }
 
-        public async Task<Respond<Meta, Types.Clans.Clans>> GetClanInfo(
+        public async Task<Respond<Meta, TypesClans>> GetClanInfo(
             Regions region,
             Language language = Language.en,
             bool extra = false,
             IEnumerable<long>? clanId = null,
             IEnumerable<string>? fields = null)
         {
-            return await _client.GetRequest<Respond<Meta, Types.Clans.Clans>>(
+            return await _client.GetRequest<Respond<Meta, TypesClans>>(
                 new RequestArguments
                 {
                     Region = region,
