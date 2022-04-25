@@ -1,4 +1,6 @@
-﻿namespace WorldOfTanksBlitz.Types.Tournaments
+﻿using WorldOfTanksBlitz.Types.Tournaments.Enums;
+
+namespace WorldOfTanksBlitz.Types.Tournaments
 {
     public struct Tournament
     {

@@ -1,4 +1,6 @@
-﻿namespace WorldOfTanksBlitz.Types.Tanks
+﻿using WorldOfTanksBlitz.Types.Tanks.Enums;
+
+namespace WorldOfTanksBlitz.Types.Tanks
 {
     public struct TankStats
     {

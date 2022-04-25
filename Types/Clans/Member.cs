@@ -1,4 +1,6 @@
-﻿namespace WorldOfTanksBlitz.Types.Clans
+﻿using WorldOfTanksBlitz.Types.Clans.Enums;
+
+namespace WorldOfTanksBlitz.Types.Clans
 {
     public struct Member
     {

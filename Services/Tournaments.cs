@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using WargamingApi.Types;
 using WorldOfTanksBlitz.Types;
 using WorldOfTanksBlitz.Types.Tournaments;
+using WorldOfTanksBlitz.Types.Tournaments.Enums;
 using RequestArguments = WorldOfTanksBlitz.Types.RequestArguments;
 using RequestParameters = WorldOfTanksBlitz.Types.RequestParameters;
 

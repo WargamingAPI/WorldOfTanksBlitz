@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using Newtonsoft.Json;
+using WorldOfTanksBlitz.Types.Clans.Enums;
 
 namespace WorldOfTanksBlitz.Types.Clans
 {
