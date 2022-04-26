@@ -6,7 +6,7 @@ namespace WorldOfTanksBlitz.Types.Tournaments
     public struct Match
     {
         public string Id { get; set; }
-        
+
         public long Round { get; set; }
         public TournamentState State { get; set; }
 
@@ -15,7 +15,7 @@ namespace WorldOfTanksBlitz.Types.Tournaments
         [JsonProperty("winner_team_id")] public long? WinnerTeamId { get; set; }
         [JsonProperty("stage_id")] public long StageId { get; set; }
         [JsonProperty("start_time")] public long StartTime { get; set; }
-        
+
         [JsonProperty("next_match_for_looser")]
         public string NextMatchIdForLooser { get; set; }
 

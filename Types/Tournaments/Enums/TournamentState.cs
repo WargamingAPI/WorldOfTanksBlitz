@@ -8,13 +8,12 @@ namespace WorldOfTanksBlitz.Types.Tournaments.Enums
     public enum TournamentState : byte
     {
         None,
-        
+
         [EnumMember(Value = "waiting_results")]
         WaitingResults,
-        [EnumMember(Value = "got_results")]
-        GotResults,
-        
+        [EnumMember(Value = "got_results")] GotResults,
+
         Upcoming,
-        Canceled,
+        Canceled
     }
 }

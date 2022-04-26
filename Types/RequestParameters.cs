@@ -1,6 +1,5 @@
 ﻿#nullable enable
 using System.Collections.Generic;
-using System.ComponentModel;
 using Newtonsoft.Json;
 
 namespace WorldOfTanksBlitz.Types
@@ -11,28 +10,17 @@ namespace WorldOfTanksBlitz.Types
 
         [JsonProperty("page_no")] public long? PageNo { get; set; }
 
-        [JsonConverter(typeof(ArrayConverter))]
         public IEnumerable<string>? Extra { get; set; }
 
-        [JsonProperty("tank_id")]
-        [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<long>? TankId { get; set; }
+        [JsonProperty("tank_id")] public IEnumerable<long>? TankId { get; set; }
 
-        [JsonProperty("tournament_id")]
-        [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<long>? TournamentId { get; set; }
+        [JsonProperty("tournament_id")] public IEnumerable<long>? TournamentId { get; set; }
 
-        [JsonProperty("clan_id")]
-        [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<long>? ClanId { get; set; }
+        [JsonProperty("clan_id")] public IEnumerable<long>? ClanId { get; set; }
 
-        [JsonProperty("team_id")]
-        [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<long>? TeamId { get; set; }
+        [JsonProperty("team_id")] public IEnumerable<long>? TeamId { get; set; }
 
-        [JsonProperty("in_garage")]
-        [JsonConverter(typeof(ByteConverter))]
-        public bool? InGarage { get; set; }
+        [JsonProperty("in_garage")] public bool? InGarage { get; set; }
     }
 
     public class RequestParameters<T, TT> : RequestParameters
@@ -41,7 +29,6 @@ namespace WorldOfTanksBlitz.Types
 
         [JsonProperty("tournament_id")] public new T TournamentId { get; set; } = default!;
 
-        [JsonConverter(typeof(ArrayConverter))]
         public new TT Status { get; set; } = default!;
     }
 }

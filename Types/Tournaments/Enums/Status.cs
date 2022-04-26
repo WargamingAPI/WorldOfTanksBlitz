@@ -15,13 +15,9 @@ namespace WorldOfTanksBlitz.Types.Tournaments.Enums
 
         [EnumMember(Value = "registration_finished")]
         RegistrationFinished,
+
         Running,
         Finished,
-        Complete,
-
-        Forming,
-        Confirmed,
-        Disqualified,
-        Static
+        Complete
     }
 }
