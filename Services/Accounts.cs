@@ -27,8 +27,8 @@ namespace WorldOfTanksBlitz.Services
             string search,
             Language language = Language.En,
             IEnumerable<string>? fields = null,
-            [Range(1, 100)] byte? limit = null,
-            Type? type = Type.Startswith)
+            byte? limit = null,
+            Type? type = Type.StartsWith)
         {
             return await _client.GetRequest<Respond<Meta, IEnumerable<Account>>>(
                 new RequestArguments
