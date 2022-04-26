@@ -1,14 +1,15 @@
-﻿using WorldOfTanksBlitz.Types.Clans.Enums;
+﻿using Newtonsoft.Json;
+using WorldOfTanksBlitz.Types.Clans.Enums;
 
 namespace WorldOfTanksBlitz.Types.Clans
 {
     public struct Member
     {
-        public string account_name { get; set; }
+        [JsonProperty("account_name")] public string AccountName { get; set; }
 
-        public long joined_at { get; set; }
-        public long account_id { get; set; }
+        [JsonProperty("joined_at")] public long JoinedAt { get; set; }
+        [JsonProperty("account_id")] public long AccountId { get; set; }
 
-        public ClansRoles role { get; set; }
+        public ClansRoles Role { get; set; }
     }
 }

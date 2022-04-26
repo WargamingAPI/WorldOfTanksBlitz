@@ -8,32 +8,37 @@ namespace WorldOfTanksBlitz.Types.Clans
 {
     public struct ClanInfo
     {
-        public byte members_count { get; set; }
+        [JsonProperty("members_count")] public byte MembersCount { get; set; }
 
-        public bool is_clan_disbanded { get; set; }
+        [JsonProperty("is_clan_disbanded")] public bool IsClanDisbanded { get; set; }
 
-        public long clan_id { get; set; }
-        public long creator_id { get; set; }
-        public long leader_id { get; set; }
-        public long created_at { get; set; }
-        public long? renamed_at { get; set; }
-        public long emblem_set_id { get; set; }
+        [JsonProperty("clan_id")] public long ClanId { get; set; }
+        [JsonProperty("creator_id")] public long CreatorId { get; set; }
+        [JsonProperty("leader_id")] public long LeaderId { get; set; }
+        [JsonProperty("created_at")] public long CreatedAt { get; set; }
+        [JsonProperty("renamed_at")] public long? RenamedAt { get; set; }
+        [JsonProperty("emblem_set_id")] public long EmblemSetId { get; set; }
 
-        public string tag { get; set; }
-        public string? old_tag { get; set; }
-        public string name { get; set; }
-        public string? old_name { get; set; }
-        public string description { get; set; }
-        public string motto { get; set; }
-        public string creator_name { get; set; }
-        public string leader_name { get; set; }
+        public string Tag { get; set; }
 
-        public RecruitingOptions? recruiting_options { get; set; }
-        public Dictionary<long, Member?>? members { get; set; }
+        [JsonProperty("old_tag")] public string? OldTag { get; set; }
+        public string Name { get; set; }
 
-        public RecruitingPolicy recruiting_policy { get; set; }
+        [JsonProperty("old_name")] public string? OldName { get; set; }
+        public string Description { get; set; }
+        public string Motto { get; set; }
 
+        [JsonProperty("creator_name")] public string CreatorName { get; set; }
+
+        [JsonProperty("leader_name")] public string LeaderName { get; set; }
+
+        [JsonProperty("recruiting_options")] public RecruitingOptions? RecruitingOptions { get; set; }
+        public Dictionary<long, Member?>? Members { get; set; }
+
+        [JsonProperty("recruiting_policy")] public RecruitingPolicy RecruitingPolicy { get; set; }
+
+        [JsonProperty("members_ids")]
         [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<long> members_ids { get; set; }
+        public IEnumerable<long> MembersIds { get; set; }
     }
 }

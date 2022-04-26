@@ -1,8 +1,11 @@
-﻿namespace WorldOfTanksBlitz.Types.Accounts
+﻿using Newtonsoft.Json;
+
+namespace WorldOfTanksBlitz.Types.Accounts
 {
     public class Account
     {
-        public long account_id { get; set; }
-        public string nickname { get; set; }
+        [JsonProperty("account_id")] public long AccountId { get; set; }
+
+        public string Nickname { get; set; }
     }
 }

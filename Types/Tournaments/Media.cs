@@ -2,9 +2,9 @@
 {
     public struct Media
     {
-        public string id { get; set; }
-        public string image { get; set; }
-        public string kind { get; set; }
-        public string url { get; set; }
+        public string Id { get; set; }
+        public string Image { get; set; }
+        public string Kind { get; set; }
+        public string Url { get; set; }
     }
 }

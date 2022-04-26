@@ -23,7 +23,7 @@ namespace WorldOfTanksBlitz.Services
 
         public async Task<IEnumerable<Tournament>> GetTournamentsList(
             Regions region,
-            Language language = Language.en,
+            Language language = Language.En,
             Status status = Status.None,
             string? search = null,
             [Range(1, 100)] byte? limit = null,
@@ -34,23 +34,23 @@ namespace WorldOfTanksBlitz.Services
                 new RequestArguments
                 {
                     Region = region,
-                    Section = Sections.tournaments,
-                    Type = Format.list,
+                    Section = Sections.Tournaments,
+                    Type = Format.List,
                     RequestParameters = new RequestParameters
                     {
-                        language = language,
-                        status = status != Status.None ? status.ToString() : null,
-                        search = search,
-                        limit = limit,
-                        page_no = pageNo,
-                        fields = fields
+                        Language = language,
+                        Status = status != Status.None ? status.ToString() : null,
+                        Search = search,
+                        Limit = limit,
+                        PageNo = pageNo,
+                        Fields = fields
                     }
                 });
         }
 
         public async Task<Respond<Meta, Dictionary<long, TournamentInfo>>> GetTournamentInfo(
             Regions region,
-            Language language = Language.en,
+            Language language = Language.En,
             IEnumerable<long>? tournamentId = null,
             IEnumerable<string>? fields = null)
         {
@@ -58,13 +58,13 @@ namespace WorldOfTanksBlitz.Services
                 new RequestArguments
                 {
                     Region = region,
-                    Section = Sections.tournaments,
-                    Type = Format.info,
+                    Section = Sections.Tournaments,
+                    Type = Format.Info,
                     RequestParameters = new RequestParameters
                     {
-                        language = language,
-                        fields = fields,
-                        tournament_id = tournamentId
+                        Language = language,
+                        Fields = fields,
+                        TournamentId = tournamentId
                     }
                 });
         }
@@ -80,26 +80,26 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<long>? clanId = null,
             IEnumerable<long>? teamId = null,
             IEnumerable<string>? fields = null,
-            Language language = Language.en)
+            Language language = Language.En)
         {
             return await _client.GetRequest<Respond<Meta, Dictionary<long, TournamentInfo>>>(
                 new RequestArguments
                 {
                     Region = region,
-                    Section = Sections.tournaments,
-                    Type = Format.teams,
+                    Section = Sections.Tournaments,
+                    Type = Format.Teams,
                     RequestParameters = new RequestParameters<long?, IEnumerable<TeamStatus>?>
                     {
-                        language = language,
-                        fields = fields,
-                        tournament_id = tournamentId,
-                        account_id = accountId,
-                        team_id = teamId,
-                        status = status,
-                        clan_id = clanId,
-                        limit = limit,
-                        page_no = pageNo,
-                        search = search
+                        Language = language,
+                        Fields = fields,
+                        TournamentId = tournamentId,
+                        AccountId = accountId,
+                        TeamId = teamId,
+                        Status = status,
+                        ClanId = clanId,
+                        Limit = limit,
+                        PageNo = pageNo,
+                        Search = search
                     }
                 });
         }

@@ -1,26 +1,32 @@
-﻿namespace WorldOfTanksBlitz.Types.Tanks
+﻿using Newtonsoft.Json;
+
+namespace WorldOfTanksBlitz.Types.Tanks
 {
     public struct AllTankStats
     {
-        public byte max_frags { get; set; }
+        [JsonProperty("max_frags")] public byte MaxFrags { get; set; }
 
-        public ushort max_xp { get; set; }
-        public ushort damage_dealt { get; set; }
-        public ushort damage_received { get; set; }
+        [JsonProperty("max_xp")] public ushort MaxXp { get; set; }
+        [JsonProperty("damage_dealt")] public ushort DamageDealt { get; set; }
+        [JsonProperty("damage_received")] public ushort DamageReceived { get; set; }
 
-        public uint wins { get; set; }
-        public uint losses { get; set; }
-        public uint battles { get; set; }
-        public uint win_and_survived { get; set; }
-        public uint survived_battles { get; set; }
+        public uint Wins { get; set; }
+        public uint Losses { get; set; }
+        public uint Battles { get; set; }
 
-        public long xp { get; set; }
-        public long hits { get; set; }
-        public long shots { get; set; }
-        public long frags { get; set; }
-        public long frags8p { get; set; }
-        public long spotted { get; set; }
-        public long capture_points { get; set; }
-        public long dropped_capture_points { get; set; }
+        [JsonProperty("win_and_survived")] public uint WinAndSurvived { get; set; }
+        [JsonProperty("survived_battles")] public uint SurvivedBattles { get; set; }
+
+        public long Xp { get; set; }
+        public long Hits { get; set; }
+        public long Shots { get; set; }
+        public long Frags { get; set; }
+        public long Frags8P { get; set; }
+        public long Spotted { get; set; }
+
+        [JsonProperty("capture_points")] public long CapturePoints { get; set; }
+
+        [JsonProperty("dropped_capture_points")]
+        public long DroppedCapturePoints { get; set; }
     }
 }

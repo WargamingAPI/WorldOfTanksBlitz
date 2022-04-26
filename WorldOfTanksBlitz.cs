@@ -55,9 +55,9 @@ namespace WorldOfTanksBlitz
                 new Uri(
                     string.Format(
                         _requestForm,
-                        nameof(requestArguments.Region),
-                        nameof(requestArguments.Section),
-                        nameof(requestArguments.Type),
+                        nameof(requestArguments.Region).ToLower(),
+                        nameof(requestArguments.Section).ToLower(),
+                        nameof(requestArguments.Type).ToLower(),
                         requestArguments.Parameters
                     )
                 )

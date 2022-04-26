@@ -1,8 +1,11 @@
-﻿namespace WorldOfTanksBlitz.Types.Tournaments
+﻿using Newtonsoft.Json;
+
+namespace WorldOfTanksBlitz.Types.Tournaments
 {
     public struct Award
     {
-        public uint amount { get; set; }
-        public string currency { get; set; }
+        [JsonProperty("amount")] public uint Amount { get; set; }
+
+        [JsonProperty("currency")] public string Currency { get; set; }
     }
 }

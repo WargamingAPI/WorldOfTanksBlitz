@@ -1,4 +1,4 @@
-﻿using WorldOfTanksBlitz.Types.Tournaments.Enums;
+﻿using Newtonsoft.Json;
 
 namespace WorldOfTanksBlitz.Types.Tournaments
 {
@@ -10,8 +10,7 @@ namespace WorldOfTanksBlitz.Types.Tournaments
 
         [JsonProperty("prize_description")] public string PrizeDescription { get; set; }
 
-        public byte max_players_count { get; set; }
-        public byte min_players_count { get; set; }
+        [JsonProperty("max_players_count")] public byte MaxPlayersCount { get; set; }
 
         [JsonProperty("min_players_count")] public byte MinPlayersCount { get; set; }
 

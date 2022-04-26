@@ -7,34 +7,41 @@ namespace WorldOfTanksBlitz.Types
 {
     public class RequestParameters : WargamingApi.Types.RequestParameters
     {
-        public string? status { get; set; }
+        public string? Status { get; set; }
 
-        public long? page_no { get; set; }
-
-        [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<string>? extra { get; set; }
+        [JsonProperty("page_no")] public long? PageNo { get; set; }
 
         [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<long>? tank_id { get; set; }
+        public IEnumerable<string>? Extra { get; set; }
 
+        [JsonProperty("tank_id")]
         [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<long>? tournament_id { get; set; }
+        public IEnumerable<long>? TankId { get; set; }
 
+        [JsonProperty("tournament_id")]
         [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<long>? clan_id { get; set; }
+        public IEnumerable<long>? TournamentId { get; set; }
 
+        [JsonProperty("clan_id")]
         [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<long>? team_id { get; set; }
+        public IEnumerable<long>? ClanId { get; set; }
 
-        [JsonConverter(typeof(ByteConverter))] public bool? in_garage { get; set; }
+        [JsonProperty("team_id")]
+        [JsonConverter(typeof(ArrayConverter))]
+        public IEnumerable<long>? TeamId { get; set; }
+
+        [JsonProperty("in_garage")]
+        [JsonConverter(typeof(ByteConverter))]
+        public bool? InGarage { get; set; }
     }
 
     public class RequestParameters<T, TT> : RequestParameters
     {
-        public new T tank_id { get; set; } = default!;
-        public new T tournament_id { get; set; } = default!;
+        [JsonProperty("tank_id")] public new T TankId { get; set; } = default!;
+
+        [JsonProperty("tournament_id")] public new T TournamentId { get; set; } = default!;
 
         [JsonConverter(typeof(ArrayConverter))]
-        public new TT status { get; set; } = default!;
+        public new TT Status { get; set; } = default!;
     }
 }

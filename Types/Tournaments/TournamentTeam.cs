@@ -9,14 +9,15 @@ namespace WorldOfTanksBlitz.Types.Tournaments
 {
     public struct TournamentTeam
     {
-        public string title { get; set; }
-        public long? clan_id { get; set; }
-        public long team_id { get; set; }
-        public long tournament_id { get; set; }
+        public string Title { get; set; }
+
+        [JsonProperty("clan_id")] public long? ClanId { get; set; }
+        [JsonProperty("team_id")] public long TeamId { get; set; }
+        [JsonProperty("tournament_id")] public long TournamentId { get; set; }
 
         [JsonConverter(typeof(ArrayConverter))]
-        public IEnumerable<TournamentPlayer> players { get; set; }
+        public IEnumerable<TournamentPlayer> Players { get; set; }
 
-        public TeamStatus status { get; set; }
+        public TeamStatus Status { get; set; }
     }
 }

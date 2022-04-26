@@ -1,13 +1,17 @@
-﻿namespace WorldOfTanksBlitz.Types.Clans
+﻿using Newtonsoft.Json;
+
+namespace WorldOfTanksBlitz.Types.Clans
 {
     public struct RecruitingOptions
     {
-        public float wins_ratio { get; set; }
+        [JsonProperty("wins_ratio")] public float WinsRatio { get; set; }
 
-        public byte vehicles_level { get; set; }
-        public uint battles { get; set; }
+        [JsonProperty("vehicles_level")] public byte VehiclesLevel { get; set; }
+        public uint Battles { get; set; }
 
-        public ushort average_battles_per_day { get; set; }
-        public ushort average_damage { get; set; }
+        [JsonProperty("average_battles_per_day")]
+        public ushort AverageBattlesPerDay { get; set; }
+
+        [JsonProperty("average_damage")] public ushort AverageDamage { get; set; }
     }
 }

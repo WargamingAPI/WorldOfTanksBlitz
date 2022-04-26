@@ -11,7 +11,7 @@ namespace WorldOfTanksBlitz.Types.Clans.Enums
 
         [EnumMember(Value = "executive_officer")]
         ExecutiveOfficer,
-        [EnumMember(Value = "private")] Private,
-        [EnumMember(Value = "commander")] Commander
+        Private,
+        Commander
     }
 }

@@ -7,7 +7,7 @@ namespace WorldOfTanksBlitz.Types.Clans.Enums
     public enum RecruitingPolicy : byte
     {
         None,
-        open,
-        close
+        Open,
+        Close
     }
 }

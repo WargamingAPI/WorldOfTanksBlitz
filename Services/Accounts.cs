@@ -25,24 +25,24 @@ namespace WorldOfTanksBlitz.Services
         public async Task<Respond<Meta, IEnumerable<Account>>> SearchAccounts(
             Regions region,
             string search,
-            Language language = Language.en,
+            Language language = Language.En,
             IEnumerable<string>? fields = null,
             [Range(1, 100)] byte? limit = null,
-            WargamingApi.Types.Types? type = WargamingApi.Types.Types.startswith)
+            Type? type = Type.Startswith)
         {
             return await _client.GetRequest<Respond<Meta, IEnumerable<Account>>>(
                 new RequestArguments
                 {
                     Region = region,
-                    Section = Sections.account,
-                    Type = Format.list,
+                    Section = Sections.Account,
+                    Type = Format.List,
                     RequestParameters = new RequestParameters
                     {
-                        search = search,
-                        fields = fields,
-                        language = language,
-                        limit = limit,
-                        type = type
+                        Search = search,
+                        Fields = fields,
+                        Language = language,
+                        Limit = limit,
+                        Type = type
                     }
                 });
         }
@@ -50,7 +50,7 @@ namespace WorldOfTanksBlitz.Services
         public async Task<Respond<Meta, Dictionary<long, AccountInfo?>>> GetAccountInfo(
             Regions region,
             IEnumerable<long> accountId,
-            Language language = Language.en,
+            Language language = Language.En,
             string? accessToken = null,
             IEnumerable<string>? extra = null,
             IEnumerable<string>? fields = null)
@@ -58,35 +58,35 @@ namespace WorldOfTanksBlitz.Services
             return await _client.GetRequest<Respond<Meta, Dictionary<long, AccountInfo?>>>(new RequestArguments
             {
                 Region = region,
-                Section = Sections.account,
-                Type = Format.info,
+                Section = Sections.Account,
+                Type = Format.Info,
                 RequestParameters = new RequestParameters
                 {
-                    account_id = accountId,
-                    access_token = accessToken,
-                    fields = fields,
-                    language = language,
-                    extra = extra
+                    AccountId = accountId,
+                    AccessToken = accessToken,
+                    Fields = fields,
+                    Language = language,
+                    Extra = extra
                 }
             });
         }
 
-        public async Task<Achievements> GetAchievements(
+        public async Task<UserAchievements> GetAchievements(
             Regions region,
             IEnumerable<long> accountId,
-            Language language = Language.en,
+            Language language = Language.En,
             IEnumerable<string>? fields = null)
         {
-            return await _client.GetRequest<Achievements>(new RequestArguments
+            return await _client.GetRequest<UserAchievements>(new RequestArguments
             {
                 Region = region,
-                Section = Sections.account,
-                Type = Format.achievements,
+                Section = Sections.Account,
+                Type = Format.Achievements,
                 RequestParameters = new RequestParameters
                 {
-                    account_id = accountId,
-                    fields = fields,
-                    language = language
+                    AccountId = accountId,
+                    Fields = fields,
+                    Language = language
                 }
             });
         }
@@ -96,19 +96,19 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<long> accountId,
             long tankId,
             IEnumerable<string>? fields = null,
-            Language? language = Language.en)
+            Language? language = Language.En)
         {
             return await _client.GetRequest<TankStats>(new RequestArguments
             {
                 Region = region,
-                Section = Sections.account,
-                Type = Format.tankstats,
+                Section = Sections.Account,
+                Type = Format.TankStats,
                 RequestParameters = new RequestParameters<long?, string>
                 {
-                    account_id = accountId,
-                    fields = fields,
-                    language = language,
-                    tank_id = tankId
+                    AccountId = accountId,
+                    Fields = fields,
+                    Language = language,
+                    TankId = tankId
                 }
             });
         }

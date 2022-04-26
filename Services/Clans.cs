@@ -23,7 +23,7 @@ namespace WorldOfTanksBlitz.Services
 
         public async Task<Respond<Meta, IEnumerable<Clan>>> SearchClans(
             Regions region,
-            Language language = Language.en,
+            Language language = Language.En,
             string? search = null,
             IEnumerable<string>? fields = null,
             [Range(1, long.MaxValue)] long? pageNo = 1,
@@ -33,22 +33,22 @@ namespace WorldOfTanksBlitz.Services
                 new RequestArguments
                 {
                     Region = region,
-                    Section = Sections.clans,
-                    Type = Format.list,
+                    Section = Sections.Clans,
+                    Type = Format.List,
                     RequestParameters = new RequestParameters
                     {
-                        search = search,
-                        fields = fields,
-                        language = language,
-                        limit = limit,
-                        page_no = pageNo
+                        Search = search,
+                        Fields = fields,
+                        Language = language,
+                        Limit = limit,
+                        PageNo = pageNo
                     }
                 });
         }
 
         public async Task<Respond<Meta, TypesClans>> GetClanInfo(
             Regions region,
-            Language language = Language.en,
+            Language language = Language.En,
             bool extra = false,
             IEnumerable<long>? clanId = null,
             IEnumerable<string>? fields = null)
@@ -57,21 +57,21 @@ namespace WorldOfTanksBlitz.Services
                 new RequestArguments
                 {
                     Region = region,
-                    Section = Sections.clans,
-                    Type = Format.info,
+                    Section = Sections.Clans,
+                    Type = Format.Info,
                     RequestParameters = new RequestParameters
                     {
-                        clan_id = clanId,
-                        extra = extra ? new[] {"members"} : null,
-                        language = language,
-                        fields = fields
+                        ClanId = clanId,
+                        Extra = extra ? new[] {"members"} : null,
+                        Language = language,
+                        Fields = fields
                     }
                 });
         }
 
         public async Task<Respond<Meta, Members>> GetClanMemberInfo(
             Regions region,
-            Language language = Language.en,
+            Language language = Language.En,
             bool extra = false,
             IEnumerable<long>? accountId = null,
             IEnumerable<string>? fields = null)
@@ -80,14 +80,14 @@ namespace WorldOfTanksBlitz.Services
                 new RequestArguments
                 {
                     Region = region,
-                    Section = Sections.clans,
-                    Type = Format.accountinfo,
+                    Section = Sections.Clans,
+                    Type = Format.AccountInfo,
                     RequestParameters = new RequestParameters
                     {
-                        account_id = accountId,
-                        extra = extra ? new[] {"clan"} : null,
-                        language = language,
-                        fields = fields
+                        AccountId = accountId,
+                        Extra = extra ? new[] {"clan"} : null,
+                        Language = language,
+                        Fields = fields
                     }
                 });
         }

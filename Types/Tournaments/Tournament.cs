@@ -1,25 +1,33 @@
-﻿using WorldOfTanksBlitz.Types.Tournaments.Enums;
+﻿using Newtonsoft.Json;
+using WorldOfTanksBlitz.Types.Tournaments.Enums;
 
 namespace WorldOfTanksBlitz.Types.Tournaments
 {
     public class Tournament
     {
-        public string title { get; set; }
-        public string description { get; set; }
+        public string Title { get; set; }
+        public string Description { get; set; }
 
-        public long tournament_id { get; set; }
-        public long end_at { get; set; }
-        public long matches_start_at { get; set; }
-        public long registration_end_at { get; set; }
-        public long registration_start_at { get; set; }
-        public long start_at { get; set; }
+        [JsonProperty("tournament_id")] public long TournamentId { get; set; }
 
-        public Logo logo { get; set; }
+        [JsonProperty("end_at")] public long EndAt { get; set; }
 
-        public Award? fee { get; set; }
-        public Award? award { get; set; }
-        public Award? winner_award { get; set; }
+        [JsonProperty("matches_start_at")] public long MatchesStartAt { get; set; }
 
-        public Status status { get; set; }
+        [JsonProperty("registration_end_at")] public long RegistrationEndAt { get; set; }
+
+        [JsonProperty("registration_start_at")]
+        public long RegistrationStartAt { get; set; }
+
+        [JsonProperty("start_at")] public long StartAt { get; set; }
+
+        public Logo Logo { get; set; }
+
+        public Award? Fee { get; set; }
+        public Award? Award { get; set; }
+
+        [JsonProperty("winner_award")] public Award? WinnerAward { get; set; }
+
+        public Status Status { get; set; }
     }
 }

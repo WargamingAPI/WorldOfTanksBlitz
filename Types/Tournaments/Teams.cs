@@ -2,9 +2,9 @@
 {
     public struct Teams
     {
-        public long max { get; set; }
-        public long? min { get; set; }
-        public long total { get; set; }
-        public long? confirmed { get; set; }
+        public long Max { get; set; }
+        public long? Min { get; set; }
+        public long Total { get; set; }
+        public long? Confirmed { get; set; }
     }
 }

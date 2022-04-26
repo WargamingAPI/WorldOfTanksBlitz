@@ -25,22 +25,22 @@ namespace WorldOfTanksBlitz.Services
             bool? inGarage = null,
             IEnumerable<long>? tankId = null,
             IEnumerable<string>? fields = null,
-            Language? language = Language.en)
+            Language? language = Language.En)
         {
             return await _client.GetRequest<Respond<Meta, Dictionary<string, IEnumerable<TankInfo>?>>>(
                 new RequestArguments
                 {
                     Region = region,
-                    Section = Sections.tanks,
-                    Type = Format.stats,
+                    Section = Sections.Tanks,
+                    Type = Format.Stats,
                     RequestParameters = new RequestParameters
                     {
-                        account_id = new[] {accountId},
-                        in_garage = inGarage,
-                        tank_id = tankId,
-                        access_token = accessToken,
-                        fields = fields,
-                        language = language
+                        AccountId = new[] {accountId},
+                        InGarage = inGarage,
+                        TankId = tankId,
+                        AccessToken = accessToken,
+                        Fields = fields,
+                        Language = language
                     }
                 });
         }
@@ -52,22 +52,22 @@ namespace WorldOfTanksBlitz.Services
             bool? inGarage = null,
             IEnumerable<long>? tankId = null,
             IEnumerable<string>? fields = null,
-            Language? language = Language.en)
+            Language? language = Language.En)
         {
             return await _client.GetRequest<Respond<Meta, Dictionary<string, IEnumerable<TankAchievements>?>>>(
                 new RequestArguments
                 {
                     Region = region,
-                    Section = Sections.tanks,
-                    Type = Format.achievements,
+                    Section = Sections.Tanks,
+                    Type = Format.Achievements,
                     RequestParameters = new RequestParameters
                     {
-                        account_id = new[] {accountId},
-                        in_garage = inGarage,
-                        tank_id = tankId,
-                        access_token = accessToken,
-                        fields = fields,
-                        language = language
+                        AccountId = new[] {accountId},
+                        InGarage = inGarage,
+                        TankId = tankId,
+                        AccessToken = accessToken,
+                        Fields = fields,
+                        Language = language
                     }
                 });
         }

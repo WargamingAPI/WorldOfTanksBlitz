@@ -1,13 +1,16 @@
-﻿namespace WorldOfTanksBlitz.Types.Clans
+﻿using Newtonsoft.Json;
+
+namespace WorldOfTanksBlitz.Types.Clans
 {
     public struct Clan
     {
-        public byte members_count { get; set; }
+        [JsonProperty("members_count")] public byte MembersCount { get; set; }
 
-        public string tag { get; set; }
-        public string name { get; set; }
+        public string Tag { get; set; }
+        public string Name { get; set; }
 
-        public long clan_id { get; set; }
-        public long created_at { get; set; }
+        [JsonProperty("clan_id")] public long ClanId { get; set; }
+
+        [JsonProperty("created_at")] public long CreatedAt { get; set; }
     }
 }
