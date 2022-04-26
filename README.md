@@ -30,7 +30,11 @@
     - [x] Tank achievements
 
 
-- [x] Tournaments service
+- [ ] Tournaments service
     - [x] Tournaments list
     - [x] Tournament info
     - [x] Tournament teams
+    - [ ] Tournament stages
+    - [ ] Tournament matches
+    - [ ] Tournament results
+    - [ ] Tournament tables
