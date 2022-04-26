@@ -3,6 +3,7 @@ using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using WorldOfTanksBlitz.Services;
 using WorldOfTanksBlitz.Types;
+using WorldOfTanksBlitz.Types.Enums;
 
 namespace WorldOfTanksBlitz
 {

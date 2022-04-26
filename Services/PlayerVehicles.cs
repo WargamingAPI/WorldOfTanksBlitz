@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using WargamingApi.Types;
 using WorldOfTanksBlitz.Types;
+using WorldOfTanksBlitz.Types.Enums;
 using WorldOfTanksBlitz.Types.Tanks;
 using RequestArguments = WorldOfTanksBlitz.Types.RequestArguments;
 using RequestParameters = WorldOfTanksBlitz.Types.RequestParameters;

@@ -1,6 +1,6 @@
 ﻿using System;
 
-namespace WorldOfTanksBlitz.Types
+namespace WorldOfTanksBlitz.Types.Enums
 {
     [Flags]
     public enum Service : byte

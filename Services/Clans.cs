@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using WargamingApi.Types;
 using WorldOfTanksBlitz.Types;
 using WorldOfTanksBlitz.Types.Clans;
+using WorldOfTanksBlitz.Types.Enums;
 using RequestArguments = WorldOfTanksBlitz.Types.RequestArguments;
 using RequestParameters = WorldOfTanksBlitz.Types.RequestParameters;
 using TypesClans = System.Collections.Generic.Dictionary<long, WorldOfTanksBlitz.Types.Clans.ClanInfo?>;

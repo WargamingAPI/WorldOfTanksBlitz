@@ -6,6 +6,7 @@ using WargamingApi.Types;
 using WorldOfTanksBlitz.Types;
 using WorldOfTanksBlitz.Types.Accounts;
 using WorldOfTanksBlitz.Types.Achievements;
+using WorldOfTanksBlitz.Types.Enums;
 using WorldOfTanksBlitz.Types.Tanks;
 using RequestArguments = WorldOfTanksBlitz.Types.RequestArguments;
 using RequestParameters = WorldOfTanksBlitz.Types.RequestParameters;

@@ -1,4 +1,5 @@
 ﻿using System.Runtime.CompilerServices;
+using WorldOfTanksBlitz.Types.Enums;
 
 namespace WorldOfTanksBlitz.Types
 {
