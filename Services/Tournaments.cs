@@ -16,7 +16,7 @@ namespace WorldOfTanksBlitz.Services
     {
         private readonly WorldOfTanksBlitz _client;
 
-        internal Tournaments(WorldOfTanksBlitz client)
+        public Tournaments(WorldOfTanksBlitz client)
         {
             _client = client;
         }
@@ -26,7 +26,7 @@ namespace WorldOfTanksBlitz.Services
             Language language = Language.En,
             Status status = Status.None,
             string? search = null,
-            [Range(1, 100)] byte? limit = null,
+            byte? limit = null,
             long? pageNo = null,
             IEnumerable<string>? fields = null)
         {

@@ -4,7 +4,7 @@
     {
         private readonly WorldOfTanksBlitz _client;
 
-        internal Encyclopedia(WorldOfTanksBlitz client)
+        public Encyclopedia(WorldOfTanksBlitz client)
         {
             _client = client;
         }

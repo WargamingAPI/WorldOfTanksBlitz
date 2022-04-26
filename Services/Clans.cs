@@ -16,7 +16,7 @@ namespace WorldOfTanksBlitz.Services
     {
         private readonly WorldOfTanksBlitz _client;
 
-        internal Clans(WorldOfTanksBlitz client)
+        public Clans(WorldOfTanksBlitz client)
         {
             _client = client;
         }

@@ -13,7 +13,7 @@ namespace WorldOfTanksBlitz.Services
     {
         private readonly WorldOfTanksBlitz _client;
 
-        internal PlayerVehicles(WorldOfTanksBlitz client)
+        public PlayerVehicles(WorldOfTanksBlitz client)
         {
             _client = client;
         }
