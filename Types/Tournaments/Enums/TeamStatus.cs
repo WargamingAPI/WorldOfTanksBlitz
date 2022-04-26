@@ -1,5 +1,4 @@
-﻿using System.Runtime.Serialization;
-using Newtonsoft.Json;
+﻿using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
 namespace WorldOfTanksBlitz.Types.Tournaments.Enums
@@ -8,9 +7,9 @@ namespace WorldOfTanksBlitz.Types.Tournaments.Enums
     public enum TeamStatus : byte
     {
         None,
-        forming,
-        confirmed,
-        disqualified,
-        [EnumMember(Value = "static")] Static
+        Forming,
+        Confirmed,
+        Disqualified,
+        Static
     }
 }

@@ -8,16 +8,20 @@ namespace WorldOfTanksBlitz.Types.Tournaments.Enums
     public enum Status : byte
     {
         None,
-        upcoming,
-        registration_started,
-        registration_finished,
-        running,
-        finished,
-        complete,
+        Upcoming,
 
-        forming,
-        confirmed,
-        disqualified,
-        [EnumMember(Value = "static")] Static
+        [EnumMember(Value = "registration_started")]
+        RegistrationStarted,
+
+        [EnumMember(Value = "registration_finished")]
+        RegistrationFinished,
+        Running,
+        Finished,
+        Complete,
+
+        Forming,
+        Confirmed,
+        Disqualified,
+        Static
     }
 }
