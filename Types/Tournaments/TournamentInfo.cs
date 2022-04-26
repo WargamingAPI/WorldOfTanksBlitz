@@ -2,31 +2,21 @@
 
 namespace WorldOfTanksBlitz.Types.Tournaments
 {
-    public struct TournamentInfo
+    public class TournamentInfo : Tournament
     {
-        public string title { get; set; }
-        public string description { get; set; }
-        public string rules { get; set; }
-        public string other_rules { get; set; }
-        public string prize_description { get; set; }
+        public string Rules { get; set; }
 
-        public long tournament_id { get; set; }
-        public long start_at { get; set; }
-        public long end_at { get; set; }
-        public long matches_start_at { get; set; }
-        public long registration_end_at { get; set; }
-        public long registration_start_at { get; set; }
+        [JsonProperty("other_rules")] public string OtherRules { get; set; }
+
+        [JsonProperty("prize_description")] public string PrizeDescription { get; set; }
 
         public byte max_players_count { get; set; }
         public byte min_players_count { get; set; }
 
-        public Logo logo { get; set; }
-        public Teams teams { get; set; }
-        public Status status { get; set; }
-        public Media? media_links { get; set; }
+        [JsonProperty("min_players_count")] public byte MinPlayersCount { get; set; }
 
-        public Award? fee { get; set; }
-        public Award? award { get; set; }
-        public Award? winner_award { get; set; }
+        public Teams Teams { get; set; }
+
+        [JsonProperty("media_links")] public Media? MediaLinks { get; set; }
     }
 }

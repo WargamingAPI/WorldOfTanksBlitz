@@ -2,7 +2,7 @@
 
 namespace WorldOfTanksBlitz.Types.Tournaments
 {
-    public struct Tournament
+    public class Tournament
     {
         public string title { get; set; }
         public string description { get; set; }

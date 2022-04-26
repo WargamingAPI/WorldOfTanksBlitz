@@ -4,12 +4,11 @@ using AchievementsList = System.Collections.Generic.Dictionary<string, uint>;
 
 namespace WorldOfTanksBlitz.Types.Tanks
 {
-    public struct TankAchievements
+    public class TankAchievements : UserAchievements
     {
         public long account_id { get; set; }
         public long tank_id { get; set; }
 
-        public AchievementsList achievements { get; set; }
-        public MaxSeriesList max_series { get; set; }
+        [JsonProperty("tank_id")] public long TankId { get; set; }
     }
 }

@@ -2,7 +2,7 @@
 
 namespace WorldOfTanksBlitz.Types.Tanks
 {
-    public struct TankStats
+    public class TankStats
     {
         public long tank_id { get; set; }
         public long account_id { get; set; }

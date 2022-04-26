@@ -1,10 +1,7 @@
 ﻿namespace WorldOfTanksBlitz.Types.Accounts
 {
-    public struct AccountInfo
+    public class AccountInfo : Account
     {
-        public long account_id { get; set; }
-        public string nickname { get; set; }
-
         //TODO: add private fields
         /*
          private		                                Приватные данные игрока
