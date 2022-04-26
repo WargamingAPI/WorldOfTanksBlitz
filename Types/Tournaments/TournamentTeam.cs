@@ -1,9 +1,8 @@
-﻿using System.Collections.Generic;
+﻿#nullable enable
+using System.Collections.Generic;
 using System.ComponentModel;
 using Newtonsoft.Json;
 using WorldOfTanksBlitz.Types.Tournaments.Enums;
-
-#nullable enable
 
 namespace WorldOfTanksBlitz.Types.Tournaments
 {
