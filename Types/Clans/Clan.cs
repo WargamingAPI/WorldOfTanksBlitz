@@ -2,7 +2,7 @@
 
 namespace WorldOfTanksBlitz.Types.Clans
 {
-    public struct Clan
+    public class Clan
     {
         [JsonProperty("members_count")] public byte MembersCount { get; set; }
 
