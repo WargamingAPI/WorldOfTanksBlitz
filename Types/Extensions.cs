@@ -9,7 +9,7 @@ namespace WorldOfTanksBlitz.Types
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
         internal static bool HasService(this Service services, Service target)
         {
-            return ((byte)services & (byte)target) != 0;
+            return ((byte) services & (byte) target) != 0;
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
