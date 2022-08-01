@@ -104,5 +104,60 @@ namespace WorldOfTanksBlitz.Services
                     }
                 });
         }
+        
+        public async Task<Respond<Meta, IEnumerable<TournamentStage>>> GetTournamentStages(
+            Regions region,
+            long tournamentId,
+            Language language = Language.En,
+            byte? limit = null,
+            byte? pageNo = null,
+            IEnumerable<string>? fields = null)
+        {
+            return await m_client.GetRequest<Respond<Meta, IEnumerable<TournamentStage>>>(
+                new RequestArguments
+                {
+                    Region = region,
+                    Section = Sections.Tournaments,
+                    Type = Format.Stages,
+                    RequestParameters = new RequestParameters<long?>
+                    {
+                        Language = language,
+                        Fields = fields,
+                        TournamentId = tournamentId,
+                        Limit = limit,
+                        PageNo = pageNo
+                    }
+                });
+        }
+        
+        public async Task<Respond<Meta, IEnumerable<Match>>> GetTournamentMatches(
+            Regions region,
+            long stageId,
+            long tournamentId,
+            Language language = Language.En,
+            byte? limit = null,
+            byte? pageNo = null,
+            IEnumerable<long>? groupId = null,
+            IEnumerable<long>? roundNumber = null,
+            IEnumerable<long>? teamId = null,
+            IEnumerable<string>? fields = null)
+        {
+            return await m_client.GetRequest<Respond<Meta, IEnumerable<Match>>>(
+                new RequestArguments
+                {
+                    Region = region,
+                    Section = Sections.Tournaments,
+                    Type = Format.Matches,
+                    RequestParameters = new RequestParameters<long?>
+                    {
+                        Language = language,
+                        Fields = fields,
+                        TournamentId = tournamentId,
+                        StageId = stageId,
+                        Limit = limit,
+                        PageNo = pageNo
+                    }
+                });
+        }
     }
 }
