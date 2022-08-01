@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using WargamingApi;
 using WorldOfTanksBlitz.Types.Enums;
 
 namespace WorldOfTanksBlitz.Types
@@ -10,7 +11,7 @@ namespace WorldOfTanksBlitz.Types
 
         internal new object RequestParameters
         {
-            set => base.RequestParameters = JsonConvert.SerializeObject(value, SerializationOptions);
+            set => base.RequestParameters = JsonConvert.SerializeObject(value, WargamingApiClient.SerializationOptions);
         }
     }
 }

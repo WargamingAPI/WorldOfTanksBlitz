@@ -1,4 +1,5 @@
 ﻿using Newtonsoft.Json;
+using WorldOfTanksBlitz.Types.Tournaments.Structs;
 
 namespace WorldOfTanksBlitz.Types.Tournaments
 {

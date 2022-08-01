@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WargamingApi.Types;
+using WargamingApi.Types.Enums;
 using WorldOfTanksBlitz.Types;
 using WorldOfTanksBlitz.Types.Accounts;
 using WorldOfTanksBlitz.Types.Achievements;
@@ -14,11 +15,11 @@ namespace WorldOfTanksBlitz.Services
 {
     public sealed class Accounts
     {
-        private readonly WorldOfTanksBlitz _client;
+        private readonly WorldOfTanksBlitzClient m_client;
 
-        public Accounts(WorldOfTanksBlitz client)
+        public Accounts(WorldOfTanksBlitzClient client)
         {
-            _client = client;
+            m_client = client;
         }
 
         public async Task<Respond<Meta, IEnumerable<Account>>> SearchAccounts(
@@ -29,7 +30,7 @@ namespace WorldOfTanksBlitz.Services
             byte? limit = null,
             Type? type = Type.StartsWith)
         {
-            return await _client.GetRequest<Respond<Meta, IEnumerable<Account>>>(
+            return await m_client.GetRequest<Respond<Meta, IEnumerable<Account>>>(
                 new RequestArguments
                 {
                     Region = region,
@@ -54,7 +55,7 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<string>? extra = null,
             IEnumerable<string>? fields = null)
         {
-            return await _client.GetRequest<Respond<Meta, Dictionary<long, AccountInfo?>>>(new RequestArguments
+            return await m_client.GetRequest<Respond<Meta, Dictionary<long, AccountInfo?>>>(new RequestArguments
             {
                 Region = region,
                 Section = Sections.Account,
@@ -76,7 +77,7 @@ namespace WorldOfTanksBlitz.Services
             Language language = Language.En,
             IEnumerable<string>? fields = null)
         {
-            return await _client.GetRequest<UserAchievements>(new RequestArguments
+            return await m_client.GetRequest<UserAchievements>(new RequestArguments
             {
                 Region = region,
                 Section = Sections.Account,
@@ -97,7 +98,7 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<string>? fields = null,
             Language? language = Language.En)
         {
-            return await _client.GetRequest<TankStats>(new RequestArguments
+            return await m_client.GetRequest<TankStats>(new RequestArguments
             {
                 Region = region,
                 Section = Sections.Account,

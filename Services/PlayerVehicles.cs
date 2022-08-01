@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WargamingApi.Types;
+using WargamingApi.Types.Enums;
 using WorldOfTanksBlitz.Types.Enums;
 using WorldOfTanksBlitz.Types.Tanks;
 using RequestArguments = WorldOfTanksBlitz.Types.RequestArguments;
@@ -11,11 +12,11 @@ namespace WorldOfTanksBlitz.Services
 {
     public class PlayerVehicles
     {
-        private readonly WorldOfTanksBlitz _client;
+        private readonly WorldOfTanksBlitzClient m_client;
 
-        public PlayerVehicles(WorldOfTanksBlitz client)
+        public PlayerVehicles(WorldOfTanksBlitzClient client)
         {
-            _client = client;
+            m_client = client;
         }
 
         public async Task<Respond<Meta, Dictionary<string, IEnumerable<TankInfo>?>>> GetTankInfo(
@@ -27,7 +28,7 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<string>? fields = null,
             Language? language = Language.En)
         {
-            return await _client.GetRequest<Respond<Meta, Dictionary<string, IEnumerable<TankInfo>?>>>(
+            return await m_client.GetRequest<Respond<Meta, Dictionary<string, IEnumerable<TankInfo>?>>>(
                 new RequestArguments
                 {
                     Region = region,
@@ -54,7 +55,7 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<string>? fields = null,
             Language? language = Language.En)
         {
-            return await _client.GetRequest<Respond<Meta, Dictionary<string, IEnumerable<TankAchievements>?>>>(
+            return await m_client.GetRequest<Respond<Meta, Dictionary<string, IEnumerable<TankAchievements>?>>>(
                 new RequestArguments
                 {
                     Region = region,

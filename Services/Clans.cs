@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Threading.Tasks;
 using WargamingApi.Types;
+using WargamingApi.Types.Enums;
 using WorldOfTanksBlitz.Types.Clans;
 using WorldOfTanksBlitz.Types.Enums;
 using TypesClans = System.Collections.Generic.Dictionary<long, WorldOfTanksBlitz.Types.Clans.ClanInfo?>;
@@ -14,11 +15,11 @@ namespace WorldOfTanksBlitz.Services
 {
     public class Clans
     {
-        private readonly WorldOfTanksBlitz _client;
+        private readonly WorldOfTanksBlitzClient m_client;
 
-        public Clans(WorldOfTanksBlitz client)
+        public Clans(WorldOfTanksBlitzClient client)
         {
-            _client = client;
+            m_client = client;
         }
 
         public async Task<Respond<Meta, IEnumerable<Clan>>> SearchClans(
@@ -29,7 +30,7 @@ namespace WorldOfTanksBlitz.Services
             [Range(1, long.MaxValue)] long? pageNo = 1,
             [Range(1, 100)] byte? limit = null)
         {
-            return await _client.GetRequest<Respond<Meta, IEnumerable<Clan>>>(
+            return await m_client.GetRequest<Respond<Meta, IEnumerable<Clan>>>(
                 new RequestArguments
                 {
                     Region = region,
@@ -53,7 +54,7 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<long>? clanId = null,
             IEnumerable<string>? fields = null)
         {
-            return await _client.GetRequest<Respond<Meta, TypesClans>>(
+            return await m_client.GetRequest<Respond<Meta, TypesClans>>(
                 new RequestArguments
                 {
                     Region = region,
@@ -76,7 +77,7 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<long>? accountId = null,
             IEnumerable<string>? fields = null)
         {
-            return await _client.GetRequest<Respond<Meta, Members>>(
+            return await m_client.GetRequest<Respond<Meta, Members>>(
                 new RequestArguments
                 {
                     Region = region,

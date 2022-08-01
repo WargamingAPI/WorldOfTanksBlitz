@@ -2,11 +2,11 @@
 {
     public class Encyclopedia
     {
-        private readonly WorldOfTanksBlitz _client;
+        private readonly WorldOfTanksBlitzClient m_client;
 
-        public Encyclopedia(WorldOfTanksBlitz client)
+        public Encyclopedia(WorldOfTanksBlitzClient client)
         {
-            _client = client;
+            m_client = client;
         }
     }
 }

@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using WargamingApi.Types;
+using WargamingApi.Types.Enums;
 using WorldOfTanksBlitz.Types;
 using WorldOfTanksBlitz.Types.Enums;
 using WorldOfTanksBlitz.Types.Tournaments;
 using WorldOfTanksBlitz.Types.Tournaments.Enums;
+using WorldOfTanksBlitz.Types.Tournaments.Structs;
 using RequestArguments = WorldOfTanksBlitz.Types.RequestArguments;
 using RequestParameters = WorldOfTanksBlitz.Types.RequestParameters;
 
@@ -13,11 +15,11 @@ namespace WorldOfTanksBlitz.Services
 {
     public class Tournaments
     {
-        private readonly WorldOfTanksBlitz _client;
+        private readonly WorldOfTanksBlitzClient m_client;
 
-        public Tournaments(WorldOfTanksBlitz client)
+        public Tournaments(WorldOfTanksBlitzClient client)
         {
-            _client = client;
+            m_client = client;
         }
 
         public async Task<IEnumerable<Tournament>> GetTournamentsList(
@@ -29,7 +31,7 @@ namespace WorldOfTanksBlitz.Services
             long? pageNo = null,
             IEnumerable<string>? fields = null)
         {
-            return await _client.GetRequest<IEnumerable<Tournament>>(
+            return await m_client.GetRequest<IEnumerable<Tournament>>(
                 new RequestArguments
                 {
                     Region = region,
@@ -53,7 +55,7 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<long>? tournamentId = null,
             IEnumerable<string>? fields = null)
         {
-            return await _client.GetRequest<Respond<Meta, Dictionary<long, TournamentInfo>>>(
+            return await m_client.GetRequest<Respond<Meta, Dictionary<long, TournamentInfo>>>(
                 new RequestArguments
                 {
                     Region = region,
@@ -81,7 +83,7 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<string>? fields = null,
             Language language = Language.En)
         {
-            return await _client.GetRequest<Respond<Meta, Dictionary<long, TournamentInfo>>>(
+            return await m_client.GetRequest<Respond<Meta, Dictionary<long, TournamentInfo>>>(
                 new RequestArguments
                 {
                     Region = region,
