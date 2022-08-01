@@ -23,7 +23,7 @@ namespace WorldOfTanksBlitz.Types
         [JsonProperty("in_garage")] public bool? InGarage { get; set; }
     }
 
-    public class RequestParameters<T, TT> : RequestParameters
+    public class RequestParameters<T> : RequestParameters
     {
         [JsonProperty("tank_id")] public new T TankId { get; set; } = default!;
 

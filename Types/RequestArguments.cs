@@ -1,6 +1,5 @@
 ﻿using Newtonsoft.Json;
 using WorldOfTanksBlitz.Types.Enums;
-using static WargamingApi.WargamingApi;
 
 namespace WorldOfTanksBlitz.Types
 {
