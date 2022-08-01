@@ -1,9 +1,17 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
     <PropertyGroup>
-        <TargetFrameworks>net6.0;netcoreapp3.1</TargetFrameworks>
         <Configurations>Debug;Release;Release Deploy</Configurations>
         <Platforms>AnyCPU</Platforms>
+        <TargetFramework>netcoreapp3.1</TargetFramework>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+        <Title>WargamingApi.WorldOfTanksBlitz</Title>
+        <Authors>Satan1c</Authors>
+        <Copyright>Copyright (c) Alexander 2022</Copyright>
+        <PackageProjectUrl>https://github.com/WargamingAPI/WorldOfTanksBlitz</PackageProjectUrl>
+        <RepositoryUrl>https://github.com/WargamingAPI/WorldOfTanksBlitz</RepositoryUrl>
+        <RepositoryType>git</RepositoryType>
+        <Description>.NET wrapper for World of Tanks Blitz part of API</Description>
     </PropertyGroup>
 
     <ItemGroup>
