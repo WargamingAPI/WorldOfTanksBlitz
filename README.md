@@ -34,7 +34,7 @@
     - [x] Tournaments list
     - [x] Tournament info
     - [x] Tournament teams
-    - [ ] Tournament stages
+    - [x] Tournament stages
     - [ ] Tournament matches
     - [ ] Tournament results
     - [ ] Tournament tables
