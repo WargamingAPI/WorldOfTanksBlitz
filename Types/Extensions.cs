@@ -13,7 +13,7 @@ namespace WorldOfTanksBlitz.Types
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static string FormatToString(this Format target)
+        public static string EnumToString(this Format target)
         {
             return target switch
             {
@@ -39,7 +39,7 @@ namespace WorldOfTanksBlitz.Types
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static string FormatToString(this Sections target)
+        public static string EnumToString(this Sections target)
         {
             return target switch
             {
@@ -53,7 +53,7 @@ namespace WorldOfTanksBlitz.Types
         }
 
         [MethodImpl(MethodImplOptions.AggressiveInlining | MethodImplOptions.AggressiveOptimization)]
-        public static string FormatToString(this Service target)
+        public static string EnumToString(this Service target)
         {
             return target switch
             {

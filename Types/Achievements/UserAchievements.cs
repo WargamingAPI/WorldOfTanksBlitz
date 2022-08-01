@@ -9,5 +9,12 @@ namespace WorldOfTanksBlitz.Types.Achievements
         public AchievementsList Achievements { get; set; }
 
         [JsonProperty("max_series")] public MaxSeriesList MaxSeries { get; set; }
+
+        public override string ToString()
+        {
+            return nameof(UserAchievements) + ": {" +
+                   nameof(Achievements) + ": " + JsonConvert.SerializeObject(Achievements) + ", " +
+                   nameof(MaxSeries) + ": " + JsonConvert.SerializeObject(MaxSeries) + "}";
+        }
     }
 }
