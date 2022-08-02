@@ -1,8 +1,8 @@
 ﻿using Newtonsoft.Json;
 using WargamingApi;
-using WorldOfTanksBlitz.Types.Enums;
+using WargamingApi.WorldOfTanksBlitz.Types.Enums;
 
-namespace WorldOfTanksBlitz.Types
+namespace WargamingApi.WorldOfTanksBlitz.Types
 {
     public class RequestArguments : WargamingApi.Types.RequestArguments
     {

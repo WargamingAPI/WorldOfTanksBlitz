@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using WorldOfTanksBlitz.Types.Tanks.Enums;
+using WargamingApi.WorldOfTanksBlitz.Types.Tanks.Enums;
 
-namespace WorldOfTanksBlitz.Types.Tanks
+namespace WargamingApi.WorldOfTanksBlitz.Types.Tanks
 {
     public class TankStats
     {

@@ -2,7 +2,7 @@
 using MaxSeriesList = System.Collections.Generic.Dictionary<string, uint>;
 using AchievementsList = System.Collections.Generic.Dictionary<string, uint>;
 
-namespace WorldOfTanksBlitz.Types.Achievements
+namespace WargamingApi.WorldOfTanksBlitz.Types.Achievements
 {
     public class UserAchievements
     {

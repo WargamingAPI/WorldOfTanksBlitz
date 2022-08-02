@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace WorldOfTanksBlitz.Types.Accounts
+namespace WargamingApi.WorldOfTanksBlitz.Types.Accounts
 {
     public class Account
     {

@@ -3,12 +3,12 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using WargamingApi.Types;
 using WargamingApi.Types.Enums;
-using WorldOfTanksBlitz.Types.Enums;
-using WorldOfTanksBlitz.Types.Tanks;
-using RequestArguments = WorldOfTanksBlitz.Types.RequestArguments;
-using RequestParameters = WorldOfTanksBlitz.Types.RequestParameters;
+using WargamingApi.WorldOfTanksBlitz.Types.Enums;
+using WargamingApi.WorldOfTanksBlitz.Types.Tanks;
+using RequestArguments = WargamingApi.WorldOfTanksBlitz.Types.RequestArguments;
+using RequestParameters = WargamingApi.WorldOfTanksBlitz.Types.RequestParameters;
 
-namespace WorldOfTanksBlitz.Services
+namespace WargamingApi.WorldOfTanksBlitz.Services
 {
     public class PlayerVehicles
     {
@@ -29,12 +29,12 @@ namespace WorldOfTanksBlitz.Services
             Language? language = Language.En)
         {
             return await m_client.GetRequest<Respond<Meta, Dictionary<string, IEnumerable<TankInfo>?>>>(
-                new RequestArguments
+                new Types.RequestArguments
                 {
                     Region = region,
                     Section = Sections.Tanks,
                     Type = Format.Stats,
-                    RequestParameters = new RequestParameters
+                    RequestParameters = new Types.RequestParameters
                     {
                         AccountId = new[] {accountId},
                         InGarage = inGarage,
@@ -56,12 +56,12 @@ namespace WorldOfTanksBlitz.Services
             Language? language = Language.En)
         {
             return await m_client.GetRequest<Respond<Meta, Dictionary<string, IEnumerable<TankAchievements>?>>>(
-                new RequestArguments
+                new Types.RequestArguments
                 {
                     Region = region,
                     Section = Sections.Tanks,
                     Type = Format.Achievements,
-                    RequestParameters = new RequestParameters
+                    RequestParameters = new Types.RequestParameters
                     {
                         AccountId = new[] {accountId},
                         InGarage = inGarage,

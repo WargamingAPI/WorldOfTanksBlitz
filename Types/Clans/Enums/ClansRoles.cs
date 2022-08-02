@@ -2,7 +2,7 @@
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 
-namespace WorldOfTanksBlitz.Types.Clans.Enums
+namespace WargamingApi.WorldOfTanksBlitz.Types.Clans.Enums
 {
     [JsonConverter(typeof(StringEnumConverter))]
     public enum ClansRoles : byte

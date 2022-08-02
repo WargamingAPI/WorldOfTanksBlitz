@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using Newtonsoft.Json;
-using WorldOfTanksBlitz.Types.Tournaments.Enums;
+using WargamingApi.WorldOfTanksBlitz.Types.Tournaments.Enums;
 
-namespace WorldOfTanksBlitz.Types.Tournaments.Structs
+namespace WargamingApi.WorldOfTanksBlitz.Types.Tournaments.Structs
 {
     public struct Team
     {

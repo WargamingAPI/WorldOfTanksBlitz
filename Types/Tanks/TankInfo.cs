@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace WorldOfTanksBlitz.Types.Tanks
+namespace WargamingApi.WorldOfTanksBlitz.Types.Tanks
 {
     public class TankInfo : TankStats
     {

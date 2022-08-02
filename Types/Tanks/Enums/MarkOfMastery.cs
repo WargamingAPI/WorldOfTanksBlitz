@@ -1,4 +1,4 @@
-﻿namespace WorldOfTanksBlitz.Types.Tanks.Enums
+﻿namespace WargamingApi.WorldOfTanksBlitz.Types.Tanks.Enums
 {
     public enum MarkOfMastery : byte
     {

@@ -1,4 +1,4 @@
-﻿namespace WorldOfTanksBlitz.Types.Tournaments.Structs
+﻿namespace WargamingApi.WorldOfTanksBlitz.Types.Tournaments.Structs
 {
     public struct Media
     {

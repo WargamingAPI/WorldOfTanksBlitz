@@ -1,7 +1,7 @@
 ﻿using Newtonsoft.Json;
-using WorldOfTanksBlitz.Types.Clans.Enums;
+using WargamingApi.WorldOfTanksBlitz.Types.Clans.Enums;
 
-namespace WorldOfTanksBlitz.Types.Clans
+namespace WargamingApi.WorldOfTanksBlitz.Types.Clans
 {
     public struct Member
     {

@@ -1,6 +1,6 @@
 ﻿using Newtonsoft.Json;
 
-namespace WorldOfTanksBlitz.Types.Clans
+namespace WargamingApi.WorldOfTanksBlitz.Types.Clans
 {
     public class Clan
     {

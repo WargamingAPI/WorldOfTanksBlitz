@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using WargamingApi.Types;
 using WargamingApi.Types.Enums;
-using WorldOfTanksBlitz.Types;
-using WorldOfTanksBlitz.Types.Accounts;
-using WorldOfTanksBlitz.Types.Achievements;
-using WorldOfTanksBlitz.Types.Enums;
-using WorldOfTanksBlitz.Types.Tanks;
-using RequestArguments = WorldOfTanksBlitz.Types.RequestArguments;
-using RequestParameters = WorldOfTanksBlitz.Types.RequestParameters;
+using WargamingApi.WorldOfTanksBlitz.Types;
+using WargamingApi.WorldOfTanksBlitz.Types.Accounts;
+using WargamingApi.WorldOfTanksBlitz.Types.Achievements;
+using WargamingApi.WorldOfTanksBlitz.Types.Enums;
+using WargamingApi.WorldOfTanksBlitz.Types.Tanks;
+using RequestArguments = WargamingApi.WorldOfTanksBlitz.Types.RequestArguments;
+using RequestParameters = WargamingApi.WorldOfTanksBlitz.Types.RequestParameters;
 
-namespace WorldOfTanksBlitz.Services
+namespace WargamingApi.WorldOfTanksBlitz.Services
 {
     public sealed class Accounts
     {
@@ -31,12 +31,12 @@ namespace WorldOfTanksBlitz.Services
             Type? type = Type.StartsWith)
         {
             return await m_client.GetRequest<Respond<Meta, IEnumerable<Account>>>(
-                new RequestArguments
+                new Types.RequestArguments
                 {
                     Region = region,
                     Section = Sections.Account,
                     Type = Format.List,
-                    RequestParameters = new RequestParameters
+                    RequestParameters = new Types.RequestParameters
                     {
                         Search = search,
                         Fields = fields,
@@ -55,12 +55,12 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<string>? extra = null,
             IEnumerable<string>? fields = null)
         {
-            return await m_client.GetRequest<Respond<Meta, Dictionary<long, AccountInfo?>>>(new RequestArguments
+            return await m_client.GetRequest<Respond<Meta, Dictionary<long, AccountInfo?>>>(new Types.RequestArguments
             {
                 Region = region,
                 Section = Sections.Account,
                 Type = Format.Info,
-                RequestParameters = new RequestParameters
+                RequestParameters = new Types.RequestParameters
                 {
                     AccountId = accountId,
                     AccessToken = accessToken,
@@ -77,12 +77,12 @@ namespace WorldOfTanksBlitz.Services
             Language language = Language.En,
             IEnumerable<string>? fields = null)
         {
-            return await m_client.GetRequest<UserAchievements>(new RequestArguments
+            return await m_client.GetRequest<UserAchievements>(new Types.RequestArguments
             {
                 Region = region,
                 Section = Sections.Account,
                 Type = Format.Achievements,
-                RequestParameters = new RequestParameters
+                RequestParameters = new Types.RequestParameters
                 {
                     AccountId = accountId,
                     Fields = fields,
@@ -98,7 +98,7 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<string>? fields = null,
             Language? language = Language.En)
         {
-            return await m_client.GetRequest<TankStats>(new RequestArguments
+            return await m_client.GetRequest<TankStats>(new Types.RequestArguments
             {
                 Region = region,
                 Section = Sections.Account,

@@ -1,4 +1,4 @@
-﻿namespace WorldOfTanksBlitz.Types.Enums
+﻿namespace WargamingApi.WorldOfTanksBlitz.Types.Enums
 {
     public enum Sections : byte
     {

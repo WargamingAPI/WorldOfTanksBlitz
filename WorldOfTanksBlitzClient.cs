@@ -3,12 +3,12 @@ using System;
 using System.Threading.Tasks;
 using Microsoft.Extensions.DependencyInjection;
 using WargamingApi;
-using WorldOfTanksBlitz.Services;
-using WorldOfTanksBlitz.Types;
-using WorldOfTanksBlitz.Types.Enums;
+using WargamingApi.WorldOfTanksBlitz.Services;
+using WargamingApi.WorldOfTanksBlitz.Types;
+using WargamingApi.WorldOfTanksBlitz.Types.Enums;
 using Extensions = WargamingApi.Types.Extensions;
 
-namespace WorldOfTanksBlitz
+namespace WargamingApi.WorldOfTanksBlitz
 {
     public sealed class WorldOfTanksBlitzClient
     {

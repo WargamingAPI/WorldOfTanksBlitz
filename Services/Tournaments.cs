@@ -3,15 +3,15 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using WargamingApi.Types;
 using WargamingApi.Types.Enums;
-using WorldOfTanksBlitz.Types;
-using WorldOfTanksBlitz.Types.Enums;
-using WorldOfTanksBlitz.Types.Tournaments;
-using WorldOfTanksBlitz.Types.Tournaments.Enums;
-using WorldOfTanksBlitz.Types.Tournaments.Structs;
-using RequestArguments = WorldOfTanksBlitz.Types.RequestArguments;
-using RequestParameters = WorldOfTanksBlitz.Types.RequestParameters;
+using WargamingApi.WorldOfTanksBlitz.Types;
+using WargamingApi.WorldOfTanksBlitz.Types.Enums;
+using WargamingApi.WorldOfTanksBlitz.Types.Tournaments;
+using WargamingApi.WorldOfTanksBlitz.Types.Tournaments.Enums;
+using WargamingApi.WorldOfTanksBlitz.Types.Tournaments.Structs;
+using RequestArguments = WargamingApi.WorldOfTanksBlitz.Types.RequestArguments;
+using RequestParameters = WargamingApi.WorldOfTanksBlitz.Types.RequestParameters;
 
-namespace WorldOfTanksBlitz.Services
+namespace WargamingApi.WorldOfTanksBlitz.Services
 {
     public class Tournaments
     {
@@ -32,12 +32,12 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<string>? fields = null)
         {
             return await m_client.GetRequest<IEnumerable<Tournament>>(
-                new RequestArguments
+                new Types.RequestArguments
                 {
                     Region = region,
                     Section = Sections.Tournaments,
                     Type = Format.List,
-                    RequestParameters = new RequestParameters
+                    RequestParameters = new Types.RequestParameters
                     {
                         Language = language,
                         Status = status != Status.None ? status.ToString() : null,
@@ -56,12 +56,12 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<string>? fields = null)
         {
             return await m_client.GetRequest<Respond<Meta, Dictionary<long, TournamentInfo>>>(
-                new RequestArguments
+                new Types.RequestArguments
                 {
                     Region = region,
                     Section = Sections.Tournaments,
                     Type = Format.Info,
-                    RequestParameters = new RequestParameters
+                    RequestParameters = new Types.RequestParameters
                     {
                         Language = language,
                         Fields = fields,
@@ -84,7 +84,7 @@ namespace WorldOfTanksBlitz.Services
             Language language = Language.En)
         {
             return await m_client.GetRequest<Respond<Meta, Dictionary<long, TournamentInfo>>>(
-                new RequestArguments
+                new Types.RequestArguments
                 {
                     Region = region,
                     Section = Sections.Tournaments,
@@ -114,7 +114,7 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<string>? fields = null)
         {
             return await m_client.GetRequest<Respond<Meta, IEnumerable<TournamentStage>>>(
-                new RequestArguments
+                new Types.RequestArguments
                 {
                     Region = region,
                     Section = Sections.Tournaments,
@@ -143,7 +143,7 @@ namespace WorldOfTanksBlitz.Services
             IEnumerable<string>? fields = null)
         {
             return await m_client.GetRequest<Respond<Meta, IEnumerable<Match>>>(
-                new RequestArguments
+                new Types.RequestArguments
                 {
                     Region = region,
                     Section = Sections.Tournaments,

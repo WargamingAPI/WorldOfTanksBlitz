@@ -1,4 +1,4 @@
-﻿namespace WorldOfTanksBlitz.Services
+﻿namespace WargamingApi.WorldOfTanksBlitz.Services
 {
     public class Encyclopedia
     {

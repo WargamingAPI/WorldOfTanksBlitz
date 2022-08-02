@@ -1,7 +1,7 @@
 ﻿#nullable enable
 using Newtonsoft.Json;
 
-namespace WorldOfTanksBlitz.Types.Tournaments.Structs
+namespace WargamingApi.WorldOfTanksBlitz.Types.Tournaments.Structs
 {
     public struct Player
     {

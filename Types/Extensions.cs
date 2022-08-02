@@ -1,8 +1,8 @@
 ﻿using System;
 using System.Runtime.CompilerServices;
-using WorldOfTanksBlitz.Types.Enums;
+using WargamingApi.WorldOfTanksBlitz.Types.Enums;
 
-namespace WorldOfTanksBlitz.Types
+namespace WargamingApi.WorldOfTanksBlitz.Types
 {
     internal static class Extensions
     {

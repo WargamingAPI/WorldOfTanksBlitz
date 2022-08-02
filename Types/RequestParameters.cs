@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Newtonsoft.Json;
 
-namespace WorldOfTanksBlitz.Types
+namespace WargamingApi.WorldOfTanksBlitz.Types
 {
     public class RequestParameters : WargamingApi.Types.RequestParameters
     {

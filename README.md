@@ -2,7 +2,7 @@
 - [ ] Accounts service
     - [x] Account search
     - [ ] Account info
-        - [x] Public fields
+        - [ ] Public fields
         - [ ] Private fields
     - [x] Account achievements
     - [x] Accounts tanks stats
